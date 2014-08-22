@@ -78,3 +78,49 @@ let MapleSyrup = shoppingList.removeAtIndex(0)
 let array:Array<Int> = [1,2,3,4]
 let dictionary :Dictionary<String,Int> = ["dog":1,"elephant":2]
 
+var airports : [String: String] = ["TYO":"Tokyo","DUB":"Dublin"]
+
+if airports.isEmpty
+{
+    println("The aorpoirts dictionary is empty")
+}
+else
+{
+    print"The airports dictionary contains\(airports.count) items."
+}
+//prints "The airports dictionary is not empty."
+
+println("The airports dictionary contains\(airports.count) items.")
+//prints "The airpoirts dictionary contains 2 items"
+
+
+//Update and add Value Dictionary
+airports["LHR"]="London"
+//the airports dictionary now contains 3 items
+
+airports["LHR"]="London Heathrow"
+//the value for "LHR" has been changed to "London Heathrow"
+
+if let oldvalue = airports.updateValue("Dublin International", forKey: "DUB")
+{
+    println("The old value for DUB was \(oldValue).")
+}
+//prints "The old value for DUB was Dublin."
+
+
+
+
+
+
+//Remove value Dictionary
+
+airports["APL"] = "Apple International"
+//"Apple International" is not the real airport for APL,so delete it 
+airports["APL"]=nil
+// APL has now been removed from the dictionary
+
+if let removedValue = airports.removeValueForKey("DUB"){
+    println("The airports dictionary does not contain a value for DUB.")
+}
+//prints "The removed airport's name is Dublin International"
+
