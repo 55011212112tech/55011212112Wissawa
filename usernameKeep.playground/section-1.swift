@@ -3,8 +3,8 @@ class userpassword
 {
     let username : String
     let password : String
-    var data: Dictionary<String,String>=["koo":"123456"]
-    
+    var data: Dictionary<String,String>=["Tech":"666666"]
+
     init(username:String,password:String)
     {
         self.username = username
@@ -16,10 +16,10 @@ class userpassword
     {
         
         data[username] = password
+        println(data)
         let check = "finished"
-        
-        
-        reture check!
+        return check
+    
         
     }
     
@@ -27,7 +27,4 @@ class userpassword
 }
 
 let input = userpassword(username:"Mike", password:"555")
-input.keepusername("Mike",password:"555")
-
-
-
+input.keepusername("Mike",password:"555"
