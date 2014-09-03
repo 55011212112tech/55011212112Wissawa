@@ -27,4 +27,4 @@ class userpassword
 }
 
 let input = userpassword(username:"Mike", password:"555")
-input.keepusername("Mike",password:"555"
+input.keepusername("Mike",password:"555")
