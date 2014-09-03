@@ -3,7 +3,7 @@ class userpassword
 {
     let username : String
     let password : String
-    var data: Dictionary<String,String>=["Tech":"666666"]
+    var data: Dictionary<String,String>=["":""]
 
     init(username:String,password:String)
     {
@@ -15,16 +15,40 @@ class userpassword
     func keepusername(username:String,password:String) -> String
     {
         
-        data[username] = password
-        println(data)
-        let check = "finished"
-        return check
-    
+        var temp = "0"
         
+        if(password.isEmpty)
+        {
+           
+            data[username] = password
+            temp = "1"
+        }
+        else
+        {
+            data[username] = password
+            temp = "0"
+            
+        }
+        
+    return temp
+
     }
     
-    
+    func showdata()
+    {
+        for datalist in data.keys
+        {
+            println("\(datalist) \(data[datalist])")
+        }
+    }
+
 }
 
-let input = userpassword(username:"Mike", password:"555")
-input.keepusername("Mike",password:"555")
+let input = userpassword(username:"Mike", password:"0")
+let x = input.keepusername("Mike",password:"0")
+input.showdata()
+
+
+
+
+
