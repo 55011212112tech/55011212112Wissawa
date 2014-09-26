@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 student. All rights reserved.
 //
 
+//tech
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var totalTextField : UITextField!
     @IBOutlet var taxPctSlider : UISlider!
     @IBOutlet var taxPctLabel :UILabel!
@@ -19,19 +20,13 @@ class ViewController: UIViewController {
         let possibleTips = tipCalc.returnPossibleTips()
         var results = ""
 
-        for(tipPct,tipValue) in PossibleTips{
-            results+="\(tipPct)%: \(tipValue)\n"
-        }
-        
+     //   for(tipPct,tipValue) in possibleTips{
+       //     results+="\(tipPct)%: \(tipValue)\n"
+       // }
+ 
         resultsTextView.text = results
-        var keys = Array(possibleTips.keys)
-        sort(&keys)
-        for tipPct in keys {
-            let tipValue = possibleTips[tipPct]!
-            let prettyTipValue = String(format:"%.2f",tipvalue)
-            results += "\(tipPct)%:\(prettyTipValue)"
-    }
-    }
+           }
+    
     
     @IBAction func slide(sender: AnyObject) {
             tipCalc.taxPct = Double(taxPctSlider.value)/100.0
