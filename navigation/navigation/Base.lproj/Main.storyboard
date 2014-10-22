@@ -16,10 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unknow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoS-Px-AHt">
-                                <rect key="frame" x="155" y="184" width="64" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unknow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoS-Px-AHt">
+                                <rect key="frame" x="134" y="225" width="107" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.4828043894138897" green="0.34821600641056427" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="keo-Kn-YFv">
@@ -29,12 +29,18 @@
                                     <navigationItem title="Title" id="OFJ-I3-Dyb">
                                         <barButtonItem key="leftBarButtonItem" title="Color" id="0iv-Rq-qxA">
                                             <connections>
-                                                <segue destination="MqA-VC-qBO" kind="show" identifier="mysegue" id="6HE-oF-x4z"/>
+                                                <segue destination="MqA-VC-qBO" kind="show" identifier="mySegue" id="6HE-oF-x4z"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Selected Color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbE-JL-rux">
+                                <rect key="frame" x="114" y="196" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.65103341697411787" blue="0.45187815560765054" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -69,15 +75,21 @@
                                 <state key="normal" title="Red">
                                     <color key="titleShadowColor" red="0.10986328125" green="0.092794450642107035" blue="0.094548385716814731" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="colorselect:" destination="MqA-VC-qBO" eventType="touchUpInside" id="CTg-aW-SdW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vZ-GH-tu8">
-                                <rect key="frame" x="160" y="304" width="68" height="45"/>
+                                <rect key="frame" x="153" y="304" width="68" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.56174689894476315" blue="0.026659569753295531" alpha="0.83000000000000007" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Green">
                                     <color key="titleShadowColor" red="0.1098632812" green="0.092794450639999998" blue="0.094548385720000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="colorselect:" destination="MqA-VC-qBO" eventType="touchUpInside" id="IT7-X6-Vuw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgc-Fr-DMS">
                                 <rect key="frame" x="293" y="303" width="66" height="46"/>
@@ -88,22 +100,40 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="colorSelect:" destination="MqA-VC-qBO" eventType="touchUpInside" id="TZU-ve-J7X"/>
+                                    <action selector="colorselect:" destination="MqA-VC-qBO" eventType="touchUpInside" id="ZyO-BS-kn3"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIO-8A-Nz4">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="qIl-eY-gcj">
-                                        <barButtonItem key="leftBarButtonItem" title="Save" id="WqX-hD-fsV"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Save" id="WqX-hD-fsV">
+                                            <connections>
+                                                <action selector="savecolor:" destination="MqA-VC-qBO" id="jRb-4f-8LU"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-Dn-oSV">
-                                <rect key="frame" x="166" y="193" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Select Colors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1x-6a-0rT">
+                                <rect key="frame" x="108" y="166" width="159" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Color " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJ9-4d-DxH">
+                                <rect key="frame" x="169" y="204" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-Dn-oSV">
+                                <rect key="frame" x="133" y="233" width="108" height="36"/>
+                                <color key="backgroundColor" red="0.27130358444889502" green="1" blue="0.4726600334836053" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.075568172420671709" blue="0.071653758611933793" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.92666951236684147" green="0.33565689114327479" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.36240646331852711" green="1" blue="0.32849426635156553" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.74136791329999996" green="1" blue="0.2506319179" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
@@ -115,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kz-WX-DCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426.5" y="416.5"/>
+            <point key="canvasLocation" x="1420.5" y="416.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bbf-mN-NYW">

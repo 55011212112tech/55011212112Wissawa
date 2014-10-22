@@ -7,26 +7,41 @@
 //
 
 import UIKit
+protocol colortwoviewcontrollerDelegate
+{
+    func myVCDidFinish(controller:colortwoviewcontroller,text:String)
+}
 
 class colortwoviewcontroller: UIViewController {
-
+    
+    
+   
+    var delegate:colortwoviewcontrollerDelegate? = nil
+    
+    var colorString = ""
+    
+    @IBAction func colorselect(sender: UIButton)
+    {
+        colorlabel.text = sender.titleLabel!.text!
+    }
     @IBOutlet var colorlabel: UILabel!
     
-    @IBAction func colorSelect(sender: AnyObject)
-    {
-        
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func savecolor(sender: UIBarButtonItem) {
+        if(delegate != nil)
+        {
+            delegate!.myVCDidFinish(self,text: colorlabel!.text!)
+        }
     }
     
+   
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        colorlabel.text = colorString
+    }
+
 
     /*
     // MARK: - Navigation
