@@ -14,6 +14,16 @@ class ViewController: UIViewController,UITableViewDataSource {
 
     @IBOutlet var tableview: UITableView!
     
+    @IBAction func removebutton(sender: AnyObject)
+    {
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context : NSManagedObjectContext = appDel.managedObjectContext!
+        
+        var request = NSFetchRequest(entityName: "item")
+        
+        
+    }
+    
     @IBAction func Additem(sender: AnyObject)
     {
         var alert = UIAlertController(title: "New item", message: "Add a new item", preferredStyle:.Alert)
@@ -21,6 +31,10 @@ class ViewController: UIViewController,UITableViewDataSource {
         let saveAction = UIAlertAction(title: "Save", style: .Default) {(action: UIAlertAction!) -> Void in
             
             let textField = alert.textFields![0] as UITextField
+            
+            //Print
+            println(textField.text)
+            
             self.saveName(textField.text)
             self.tableview.reloadData()
     }
@@ -62,8 +76,13 @@ class ViewController: UIViewController,UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
         as UITableViewCell
         let item = items[indexpath.row]
+
         cell.textLabel!.text = item.valueForKey("name") as String?
         return cell
+        
+        
+        
+        
     }
     
     func saveName(name: String){
