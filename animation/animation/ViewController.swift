@@ -90,7 +90,8 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate
                 let attach = UIAttachmentBehavior(item:collidingView,attachedToItem:square)
                 animator.addBehavior(attach)
             
-             firstContact = true
+                //firstContact = true;
+            
             
         }
     }
