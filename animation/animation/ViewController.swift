@@ -54,7 +54,7 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate
         
         //Add elasticity
         let itemBehaviour = UIDynamicItemBehavior(items: [square])
-        itemBehaviour.elasticity = 1
+        itemBehaviour.elasticity = 1.5
         animator.addBehavior(itemBehaviour)
         
         
@@ -90,7 +90,8 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate
                 let attach = UIAttachmentBehavior(item:collidingView,attachedToItem:square)
                 animator.addBehavior(attach)
             
-             firstContact = true
+                //firstContact = true;
+            
             
         }
     }
