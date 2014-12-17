@@ -22,7 +22,9 @@ class colortwoviewcontroller: UIViewController {
     
     @IBAction func colorselect(sender: UIButton)
     {
-        colorlabel.text = sender.titleLabel!.text!
+        colorlabel.text = sender.titleLabel!.text!.lastPathComponent
+        colorlabel.backgroundColor = UIColor.redColor()
+        colorlabel.textColor = UIColor.whiteColor()
     }
     @IBOutlet var colorlabel: UILabel!
     
